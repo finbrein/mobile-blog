@@ -1,0 +1,25 @@
+Welcome to MBlog - A Mobile Blog 
+
+**********************************************************************************************************************
+ABOUT THE APPLICATION
+
+This is a mobile blog. 
+
+The application allows a user to create a new blog and read existing blogs.
+
+Technology involved include C# ASP.NET MVC 3, JQuery, CSS and HTML5.
+
+The MobileBlog folder is the app folder and contains the project including the source files and all other the resources.  
+
+Other files in the repo are  -
+
++ README - A simple description of the application.
++ MobileBlog.pdf - Screenshots of the running application. 
+
+Getting Help
+***********************************************************************************************************************
+If you have a question or need help with MBlog mobile blog, you can get help from the following sources:
+
+* eMail: finbrein@gmail.com
+* IRC: irc://irc.freenode.net #OpenMRS (my nickname is finbrein)
+
