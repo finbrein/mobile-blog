@@ -1,0 +1,7 @@
+C:\sep\MobileBlog\MobileBlog\obj\Debug\ResolveAssemblyReference.cache
+C:\sep\MobileBlog\MobileBlog\bin\MobileBlog.dll
+C:\sep\MobileBlog\MobileBlog\bin\MobileBlog.pdb
+C:\sep\MobileBlog\MobileBlog\bin\EntityFramework.dll
+C:\sep\MobileBlog\MobileBlog\bin\EntityFramework.xml
+C:\sep\MobileBlog\MobileBlog\obj\Debug\MobileBlog.dll
+C:\sep\MobileBlog\MobileBlog\obj\Debug\MobileBlog.pdb

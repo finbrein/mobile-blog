@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MobileBlog.Models.Post>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#refresh").click(function () {
+            location.reload();
+        });
+    });
+ 
+</script>
+<button data-theme="b" data-role="button" data-iconpos="left" id="refresh" type="button"
+    data-icon="refresh">
+    Refresh</button>
+<ul data-role="listview" data-theme="d" data-inset="true">
+    @foreach (var post in Model)
+    {
+        <li>
+            <h2>@post.Title</h2>@post.Content<p class="ui-li-aside">
+                <strong>@post.PublishDate</strong></p>
+        </li>
+    }
+</ul>

@@ -1,0 +1,67 @@
+﻿@model MobileBlog.Models.Post
+ 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<script type="text/javascript">
+    function resetTextFields() {
+        $("#Title").val("");
+        $("#Content").val("");
+    }
+
+    function onSuccess(data, status) {
+        resetTextFields();
+        // Notify the user the new post was saved
+        $("#notification").fadeIn(2000);
+        data = $.trim(data);
+        if (data == "SUCCESS") {
+            $("#notification").css("background-color", "#ffff00");
+            $("#notification").text("The post was saved");
+        }
+        else {
+            $("#notification").css("background-color", "#ff0000");
+            $("#notification").text(data);
+        }
+        $("#notification").fadeOut(5000);
+    }
+
+    $(document).ready(function () {
+
+        $("form[action$='SavePost']").submit(function () {
+            $.ajax({
+                url: $(this).attr("action"),
+                type: "post",
+                data: $(this).serialize(),
+                success: onSuccess
+            });
+            return false;
+        });
+
+        $("#cancel").click(function () {
+            resetTextFields();
+        });
+    });
+ 
+</script>
+ 
+@using (Html.BeginForm("SavePost", "Home", FormMethod.Post))
+{
+    <div data-role="content">
+        <form id="newPostForm">
+            <div data-role="fieldcontain">
+                @Html.LabelFor(model => model.Title, "Post Title")
+                @Html.EditorFor(model => model.Title)
+ 
+                @Html.LabelFor(model => model.Content, "Post Content")
+                @Html.TextAreaFor(model => model.Content)
+ 
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a">@Html.ActionLink("Cancel", "Index", null, new { @data_role = "button" })</div>
+                    <div class="ui-block-b"><button data-theme="b" id="submit" type="submit">Submit</button></div>
+                </fieldset>
+                <h3 id="notification"></h3>
+            </div>
+        </form>
+    </div>
+}
